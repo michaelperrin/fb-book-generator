@@ -32,7 +32,6 @@ body {
     display: table-cell;
     vertical-align: middle;
     width: 3.125in;
-    height: 3.9in;
 }
 
 .two-per-page .figure .picture img {
@@ -44,6 +43,7 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding-left: 0.15in;
+    page-break-inside: avoid;
 }
 
 .text_exposed_hide {
