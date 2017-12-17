@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    Coucou
+    <div id="app-4">
+      <div>
+        <div v-for="pictureChunk in pictureChunks">
+            <div class="page">
+                <div class="one-per-page" v-if="pictureChunk.length === 1">
+                    <div v-for="picture in pictureChunk">
+                        <div class="figure">
+                            <div class="picture">
+                                <img v-bind:src="'pictures/luna/' + picture.pictureName" alt="">
+                            </div>
+
+                            <div class="caption" v-html="picture.description"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="three-per-page" v-if="pictureChunk.length === 2">
+                    <div v-for="picture in pictureChunk">
+                        <div class="figure">
+                            <div class="picture">
+                                <img v-bind:src="'pictures/luna/' + picture.pictureName" alt="">
+                            </div>
+
+                            <div class="caption" v-html="picture.description"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="three-per-page" v-if="pictureChunk.length === 3">
+                    <div v-for="picture in pictureChunk">
+                        <div class="figure">
+                            <div class="picture">
+                                <img v-bind:src="'pictures/luna/' + picture.pictureName" alt="">
+                            </div>
+
+                            <div class="caption" v-html="picture.description"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="book.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+@page {
+  size: 6in 9in;
+  margin-top: 0.7in;
+  margin-bottom: 0.8in;
+  margin-left: 0.5in;
+  margin-right: 0.5in;
+
+  @bottom-center {
+    content: counter(page);
+    font-family: Georgia, serif;
+    font-size: 0.8rem;
+    margin-bottom: 0.2in;
+  }
+}
+
+body {
+    font-family: 'Gill Sans';
+    font-size: 0.8rem;
+}
+
+.page {
+    page-break-after: always;
+}
+
+.three-per-page .figure {
+    display: table;
+    width: 100%;
+}
+
+.three-per-page .figure .picture {
+    display: table-cell;
+    width: 2.5in;
+}
+
+.three-per-page .figure .picture img {
+    max-width: 2.5in;
+    max-height: 2.5in;
+}
+
+.three-per-page .figure .caption {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 0.2in;
+}
+
+.text_exposed_hide {
+    display: none;
+}
