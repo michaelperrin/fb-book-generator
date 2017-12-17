@@ -1,5 +1,5 @@
 @page {
-  size: 6in 9in;
+  size: 6.125in 9.250in;
   margin-top: 0.6in;
   margin-bottom: 0.6in;
   margin-left: 0.5in;
@@ -22,25 +22,28 @@ body {
     page-break-after: always;
 }
 
-.three-per-page .figure {
+.two-per-page .figure {
     display: table;
     width: 100%;
+    margin-bottom: 0.2in;
 }
 
-.three-per-page .figure .picture {
-    display: table-cell;
-    width: 2.8in;
-}
-
-.three-per-page .figure .picture img {
-    max-width: 2.8in;
-    max-height: 2.5in;
-}
-
-.three-per-page .figure .caption {
+.two-per-page .figure .picture {
     display: table-cell;
     vertical-align: middle;
-    padding-left: 0.2in;
+    width: 3.125in;
+    height: 3.9in;
+}
+
+.two-per-page .figure .picture img {
+    max-width: 3.125in;
+    max-height: 3.9in;
+}
+
+.two-per-page .figure .caption {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 0.15in;
 }
 
 .text_exposed_hide {
