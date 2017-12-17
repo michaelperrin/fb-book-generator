@@ -17,7 +17,9 @@ var description;
 var currentDescription;
 var result = [];
 
-function loadData() {
+const removeElements = (elms) => [...elms].forEach(el => el.remove());
+
+function loadData(title) {
     var seeMore = document.getElementsByClassName('see_more_link_inner');
 
     if (seeMore.length) {
@@ -27,7 +29,18 @@ function loadData() {
     var picturePath = document.getElementsByClassName('spotlight')[0].getAttribute("src");
     var picture = picturePath.substr(picturePath.lastIndexOf('/') + 1);
 
-    var description = document.getElementsByClassName('fbPhotosPhotoCaption')[0].innerHTML;
+    // Get description element and remove useless elements
+    var descriptionElt = document.getElementsByClassName('fbPhotosPhotoCaption')[0];
+    removeElements(descriptionElt.querySelectorAll('.text_exposed_hide'));
+    var description = descriptionElt.innerHTML;
+    description = description.replace(new RegExp('<br>', 'g'), 'BRBRBR');
+    description = description.replace(/<\/?[^>]+>/g, ''); // Strip tags
+    description = description.replace(new RegExp('BRBRBR', 'g'), '<br>'); // Add br tags
+
+    // Remove title
+    var regex = new RegExp('^' + title + '(<br>)?');
+    description = description.replace(regex, '');
+    description = description.trim();
 
     return {
         description: description,
@@ -39,8 +52,8 @@ function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-function loadAll() {
-    var data = loadData();
+function loadAll(title) {
+    var data = loadData(title);
     var description = data.description;
 
     if (pictures.indexOf(data.picture) === -1) { // TODO remove
@@ -63,7 +76,8 @@ function loadAll() {
     }
 }
 
-loadAll();
+loadAll('La VILLETTE: des ABATTOIRS, aux CITES des SCIENCES et de la MUSIQUE');
+
 // console.log(result);
 
 // function generateBook() {
