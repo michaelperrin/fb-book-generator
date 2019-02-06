@@ -1,0 +1,19 @@
+{
+  "title": "Kitten book",
+  "albums": [
+    {
+      "name": "chatons",
+      "title": "Cute little kittens",
+      "pictures": [
+        {
+          "url": "http://placekitten.com/200/300",
+          "description": "Cute <b>kitten</b>"
+        },
+        {
+          "url": "http://placekitten.com/200/300",
+          "description": "Cute <b>kitten 2</b>"
+        }
+      ]
+    }
+  ]
+}

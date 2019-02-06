@@ -1,33 +1,18 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Book from './components/Book';
 import { writeFile } from 'fs';
+import Book from './components/Book';
+import htmlTemplate from './helpers/template';
+import bookData from './book-data.json';
 
-const jsx = (<Book />);
+const jsx = (<Book title={bookData.title} albums={bookData.albums} />);
 const reactDom = renderToString(jsx);
 const res = htmlTemplate(reactDom);
 
-writeFile('../build/book.html', res, function (err) {
-    if (err) {
-        return console.log(err);
-    }
+writeFile('../build/book.html', res, (err) => {
+  if (err) {
+    console.log(err);
+  }
 
-    console.log('The book was generated!');
+  console.log('The book was generated!');
 });
-
-function htmlTemplate(reactDom) {
-    return `
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <title>Book</title>
-        </head>
-
-        <body>
-            <div id="app">${ reactDom}</div>
-            <script src="./app.bundle.js"></script>
-        </body>
-        </html>
-    `;
-}
