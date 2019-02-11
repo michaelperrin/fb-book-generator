@@ -5,6 +5,7 @@ export default function htmlTemplate(reactDom) {
 <head>
     <meta charset="utf-8">
     <title>Book</title>
+    <link rel="stylesheet" href="styles/book.css">
 </head>
 
 <body>

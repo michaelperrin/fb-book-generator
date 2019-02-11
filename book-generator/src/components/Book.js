@@ -16,16 +16,17 @@ class Book extends React.Component {
         <BlankPages number={2} />
 
         <div className="intro">
-          <p>
-            Contenu original (photos et texte) :
-            <br />
-            page Facebook de "John d'Orbigny Immobilier" (Patrick Marsaud).
+          <p style={{ marginBottom: '0.4in' }}>
+            <b>De la part de Frédéric et Michaël</b>
           </p>
 
           <p style={{ marginBottom: '2in' }}>
-            Mise en forme :
+            <b>Contenu original (photos et texte) :</b>
             <br />
-            Frédéric et Michaël
+            <br />
+            Page Facebook de "John d'Orbigny Immobilier" (Patrick Marsaud).
+            <br />
+            https://www.facebook.com/johndorbigny/
           </p>
 
           <p style={{ textAlign: 'right' }}>

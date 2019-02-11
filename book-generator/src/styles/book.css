@@ -1,0 +1,139 @@
+@page {
+  size: 6.125in 9.250in;
+  margin-top: 0.6in;
+  margin-bottom: 0.6in;
+  margin-left: 0.5in;
+  margin-right: 0.5in;
+
+  @bottom-center {
+    content: counter(page);
+    font-family: Georgia, serif;
+    font-size: 0.8rem;
+    margin-bottom: 0.2in;
+  }
+}
+
+@page :left {
+  @top-left {
+    content: string(chaptertitle);
+    font-size: 8pt;
+    font-family: 'Avenir Next';
+    font-weight: 100;
+  }
+}
+
+@page :right {
+  @top-right {
+    content: string(chaptertitle);
+    font-size: 8pt;
+    font-family: 'Avenir Next';
+    font-weight: 100;
+  }
+}
+
+@page cover {
+    @bottom-center {
+        content: none;
+    }
+
+    margin: 0;
+}
+
+.cover {
+    page: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cover h1 {
+    text-align: right;
+    margin-top: 7.4in;
+    margin-left: 1.5in;
+    margin-right: 0.5in;
+    font-family: 'Avenir Next';
+    color: white;
+    font-weight: 300;
+    font-size: 3.4rem;
+}
+
+.blank-page {
+    page: blank;
+    page-break-after: always;
+}
+
+/* Remove page numbers on special pages */
+@page toc {
+    @bottom-center {
+        content: none;
+    }
+}
+
+@page blank {
+    @bottom-center {
+        content: none;
+    }
+
+    @top-left {
+        content: none;
+    }
+
+    @top-right {
+        content: none;
+    }
+}
+
+@page cover {
+    @bottom-center {
+        content: none;
+    }
+}
+
+body {
+    font-family: 'Gill Sans';
+    font-size: 0.8rem;
+}
+
+a {
+    color: inherit;
+}
+
+.album {
+    page-break-after: always;
+}
+
+.figure {
+    display: table;
+    width: 100%;
+    margin-bottom: 0.2in;
+}
+
+.figure .picture {
+    display: table-cell;
+    vertical-align: middle;
+    width: 3.125in;
+}
+
+.figure .picture img {
+    max-width: 3.125in;
+    max-height: 3.9in;
+}
+
+.figure .caption {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 0.15in;
+    page-break-inside: avoid;
+}
+
+.album-title {
+    string-set: chaptertitle content();
+    font-family: 'Avenir Next';
+    font-weight: 100;
+    margin-bottom: 1.2in;
+    font-size: 1.8rem;
+    margin-top: 1.5in;
+}
