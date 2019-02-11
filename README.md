@@ -6,9 +6,10 @@ TODO
 
 ## Generate book as HTML file
 
-    cd book-generator
-    yarn run generate
+    make build_book
 
 ## Generate PDF file from HTML file
 
-    bin/prince book.html -o book.pdf
+This step generates the book from the HTML/CSS files to a PDF file, using [Prince](https://www.princexml.com/):
+
+    make build_pdf
