@@ -6,7 +6,10 @@ var descriptions = [];
 var pictures = [];
 var description;
 var currentDescription;
-var result = [];
+var result = {
+  title: null,
+  pictures: []
+};
 
 var removeElements = (elms) => [...elms].forEach(el => el.remove());
 
@@ -46,12 +49,13 @@ function sleep(time) {
 
 function loadAll(title) {
   var data = loadData(title);
+  result.title = title.replace(/ - $/, '');
   var description = data.description;
 
   if (pictures.indexOf(data.picture) === -1) {
     pictures.push(data.picture);
 
-    result.push({
+    result.pictures.push({
       url: getPictureUrl(),
       description: description
     });

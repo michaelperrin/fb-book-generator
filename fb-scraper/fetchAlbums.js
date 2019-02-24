@@ -33,8 +33,8 @@ function fetchAlbums() {
         downloadFile(picture.url, fileName);
 
         newAlbum.pictures.push({
-          name: `${file}/${i}.jpg`,
-          description: album.description,
+          name: fileName,
+          description: picture.description,
         });
 
         i++;
