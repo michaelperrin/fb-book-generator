@@ -12,8 +12,8 @@ class Album extends Component {
 
         {pictures.map(picture => (
           <AlbumPicture
-            key={picture.url}
-            url={picture.url}
+            key={picture.name}
+            url={picture.name}
             description={picture.description}
           />
         ))}

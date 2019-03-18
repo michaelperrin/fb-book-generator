@@ -105,6 +105,27 @@ a {
     page-break-after: always;
 }
 
+.long-text-figure {
+    text-align: justify;
+    margin-left: 0.6in;
+    margin-bottom: 0.5in;
+}
+
+.long-text-figure img {
+    display: block;
+    width: 3.125in;
+    float: left;
+    margin-left: -0.6in;
+    /* padding: 0.1in 0.16in 0.1in 0; */
+    padding: 0in 0.16in 0.1in 0;
+}
+
+.long-text-figure::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 .figure {
     display: table;
     width: 100%;
@@ -115,6 +136,7 @@ a {
     display: table-cell;
     vertical-align: middle;
     width: 3.125in;
+    text-align: center;
 }
 
 .figure .picture img {

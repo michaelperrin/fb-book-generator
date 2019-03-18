@@ -12,7 +12,10 @@ function fetchAlbums() {
     if (file.endsWith('.json') && file !== ALBUMS_FILE_NAME) {
       let data = fs.readFileSync(`${BOOK_DATA_DIR_PATH}/${file}`);
       let album = JSON.parse(data);
-      let pictureDir = `${BOOK_DATA_DIR_PATH}/${file.replace('.json', '')}`;
+      let pictureDir = file.replace('.json', '');
+      let picturePath = `${BOOK_DATA_DIR_PATH}/${pictureDir}`;
+      // console.log(picturePath);
+      // return;
 
       let i = 1;
       let newAlbum = {
@@ -21,16 +24,17 @@ function fetchAlbums() {
       };
 
       // Create picture directory for album
-      if (!fs.existsSync(pictureDir)) {
-        fs.mkdir(pictureDir, { recursive: true }, (err) => {
+      if (!fs.existsSync(picturePath)) {
+        fs.mkdir(picturePath, { recursive: true }, (err) => {
           if (err) throw err;
         });
       }
 
       album.pictures.forEach(picture => {
         const fileName = `${pictureDir}/${i}.jpg`;
+        const fileNameWithPath = `${picturePath}/${i}.jpg`;
         console.log(`⬇️ Downloading file ${fileName}`)
-        downloadFile(picture.url, fileName);
+        downloadFile(picture.url, fileNameWithPath);
 
         newAlbum.pictures.push({
           name: fileName,
