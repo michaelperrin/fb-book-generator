@@ -1,9 +1,10 @@
 const fs = require('fs');
 const http = require('https');
 
-function downloadFile(url, filename) {
+function downloadFile(url, filename, callback) {
   if (fs.existsSync(filename)) {
     console.log('🔶 File already exists... skipping.');
+    callback();
     return;
   }
 
@@ -20,7 +21,10 @@ function downloadFile(url, filename) {
       return;
     }
 
-    file.on('finish', () => file.close());
+    file.on('finish', () => {
+      file.close();
+      callback();
+    });
 
     response.pipe(file);
   });
