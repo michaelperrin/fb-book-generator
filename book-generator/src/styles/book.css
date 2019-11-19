@@ -1,9 +1,9 @@
 @page {
-  size: 6.125in 9.250in;
-  margin-top: 0.6in;
-  margin-bottom: 0.6in;
-  margin-left: 0.5in;
-  margin-right: 0.5in;
+  size: 8.125in 10.250in;
+  margin-top: 0.7in;
+  margin-bottom: 0.7in;
+  margin-left: 0.6in;
+  margin-right: 0.6in;
 
   @bottom-center {
     content: counter(page);
@@ -51,13 +51,17 @@
 
 .cover h1 {
     text-align: right;
-    margin-top: 7.4in;
-    margin-left: 1.5in;
+    margin-top: 7in;
+    margin-left: 0.5in;
     margin-right: 0.5in;
     font-family: 'Avenir Next';
     color: white;
-    font-weight: 300;
-    font-size: 3.4rem;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    font-size: 3.2rem;
+}
+
+.cover h1 small {
+    font-size: 2rem;
 }
 
 .blank-page {
@@ -94,7 +98,7 @@
 
 body {
     font-family: 'Gill Sans';
-    font-size: 0.8rem;
+    font-size: 0.95rem;
 }
 
 a {
@@ -107,17 +111,16 @@ a {
 
 .long-text-figure {
     text-align: justify;
-    margin-left: 0.6in;
-    margin-bottom: 0.5in;
+    margin-left: 0.5in;
+    margin-bottom: 0.38in;
 }
 
 .long-text-figure img {
     display: block;
-    width: 3.125in;
+    width: 3.3in;
     float: left;
-    margin-left: -0.6in;
-    /* padding: 0.1in 0.16in 0.1in 0; */
-    padding: 0in 0.16in 0.1in 0;
+    margin-left: -0.5in;
+    padding: 0in 0.15in 0.05in 0;
 }
 
 .long-text-figure::after {
@@ -129,18 +132,18 @@ a {
 .figure {
     display: table;
     width: 100%;
-    margin-bottom: 0.2in;
+    margin-bottom: 0.1in;
 }
 
 .figure .picture {
     display: table-cell;
     vertical-align: middle;
-    width: 3.125in;
+    width: 3in;
     text-align: center;
 }
 
 .figure .picture img {
-    max-width: 3.125in;
+    max-width: 3in;
     max-height: 3.9in;
 }
 
@@ -153,9 +156,9 @@ a {
 
 .album-title {
     string-set: chaptertitle content();
+    margin-bottom: 0.5in;
+    font-size: 1.7rem;
+    margin-top: 0;
     font-family: 'Avenir Next';
     font-weight: 100;
-    margin-bottom: 1.2in;
-    font-size: 1.8rem;
-    margin-top: 1.5in;
 }
